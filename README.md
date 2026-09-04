@@ -16,8 +16,9 @@ For the In-App Updater to automatically detect, download, and verify binary rele
 | **macOS** | Intel (x86_64) | `PixelBot-<version>-macOS-Intel.zip` | ZIP Archive | Contains `PixelBot.app` with embedded dylibs |
 | **macOS** | Manual Installer | `PixelBot-<version>-macOS-AppleSilicon.dmg` | Disk Image | For fresh clean manual installations |
 | **macOS** | Manual Installer | `PixelBot-<version>-macOS-Intel.dmg` | Disk Image | For fresh clean manual installations |
-| **Windows** | x64 (AMD64) | `PixelBot-<version>-Windows-x64.zip` | ZIP Archive | Contains `PixelBot.exe` + `lib/` directory |
-| **Windows** | Standalone | `PixelBot-<version>-Windows-x64.exe` | Executable | Standalone binary |
+| **Windows** | Setup Wizard Installer | `PixelBot-<version>-Windows-Setup-x64.exe` | NSIS Installer | Full desktop setup with Start Menu & Desktop shortcuts |
+| **Windows** | In-App / Portable Update | `PixelBot-<version>-Windows-x64.zip` | ZIP Archive | Contains `PixelBot.exe` + `lib/` directory |
+| **Windows** | Standalone Executable | `PixelBot-<version>-Windows-x64.exe` | Executable | Standalone single binary |
 | **All Platforms** | Integrity Manifest | `checksums.txt` | Text / SHA-256 | SHA-256 hash digests for all assets above |
 
 ---
@@ -40,7 +41,7 @@ PixelBot's in-app updater automatically downloads `checksums.txt`, parses the SH
 From the main `pixel-bot` source directory:
 
 ```bash
-# 1. Package release archives and calculate checksums
+# 1. Package release archives, NSIS installer, and calculate checksums
 make package-releases
 
 # 2. Publish to GitHub Releases using GitHub CLI
